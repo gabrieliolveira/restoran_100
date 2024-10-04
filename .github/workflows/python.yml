@@ -9,7 +9,6 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-
     steps:
     - name: Deploy no EC2 -AWS
       run: |
