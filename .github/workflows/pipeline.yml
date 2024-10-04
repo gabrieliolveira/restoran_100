@@ -1,8 +1,6 @@
 name: Pipeline
 
 on:
-  push:
-    branches: [ "dev" ]
   pull_request:
     branches: [ "dev" ]
 
@@ -17,4 +15,4 @@ jobs:
             echo "Conectando no EC2"
             echo "${{secrets.RESTORAN_CHAVE}}" > private_key && chmod 600 private_key
             ssh -o StrictHostKeyChecking=no -i private_key ubuntu@ec2-3-215-172-96.compute-1.amazonaws.com "
-                   cd restoran_100/;git pull;./start index.html"
+                   cd restoran_100/;git pull;cd /var/www/html;sudo systemctl restart apache2"
