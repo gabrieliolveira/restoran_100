@@ -1,4 +1,4 @@
-name: PipelineFlask
+name: Pipeline
 
 on:
   pull_request:
